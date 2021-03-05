@@ -79,19 +79,19 @@ window.onload = function() {
     bubbleSort(cardsNumbers);
   });
 
-    function bubbleSort(param) {
+    function bubbleSort(arr) {
     
-        for (let e = param.length - 1; e > 0; e--){
-            for (let i = 0; i <= e; i++) {
-                if (param[i] > param[i + 1]) {
+        for (let wall = arr.length - 1; wall > 0; wall--){
+            for (let i = 0; i <= wall; i++) {
+                if (arr[i] > arr[i + 1]) {
                     
-                    let param1 = param[i + 1];
-                    param[i + 1] = param[i];
-                    param[i] = param1;
+                    let aux = arr[i + 1];
+                    arr[i + 1] = arr[i];
+                    arr[i] = aux;
                     
-                    let param2 = cardLocation.children[i + 1].innerHTML;
+                    let aux2 = cardLocation.children[i + 1].innerHTML;
                     cardLocation.children[i + 1].innerHTML = cardLocation.children[i].innerHTML;
-                    cardLocation.children[i].innerHTML = param2;
+                    cardLocation.children[i].innerHTML = aux2;
                 }
             }
         }  
